@@ -1,0 +1,23 @@
+{
+    "name": "adapt-clicktwo",
+    "repository": "git://github.com/daya-cd.git",
+    "framework": "^2.0.0",
+    "version": "2.0.0",
+    "homepage": "https://github.com/daya-cd",
+    "issues": "https://github.com/daya-cd/issues",
+    "authors": [
+        "Dayanithi hari<h.dayanithi@gmail.com>"
+    ],
+    "description": "Click and Learn Template Edited core plugin",
+    "main": "/js/adapt-clicktwo.js",
+    "displayName": "clicktwo",
+    "component": "clicktwo",
+    "assetFields": [
+        "_items[].imageSrc"
+    ],
+    "keywords": [
+        "adapt-plugin",
+        "adapt-component"
+    ],
+    "license": "GPLv3"
+}

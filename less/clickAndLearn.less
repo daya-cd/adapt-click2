@@ -1,0 +1,170 @@
+.clicktwo-component {
+  padding: 20px;
+
+  .clicktwo-widget {
+   
+    .clicktwo-navContainer {
+      list-style: none;
+
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      box-sizing: border-box;
+
+      .clicktwo-indicator {
+        // background-color: @primary-color;
+        list-style: none;
+
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+
+        &.clicktwo-indicatorActive {
+          // background-color: @secondary-color;
+        }
+      }
+    }
+
+    &.clicktwo-horizontal {
+
+      .clicktwo-navContainer {
+        li {
+          display: inline-block;
+          margin-bottom: 3px;
+          margin-left: 0px;
+        }
+      }
+
+      .clicktwo-tabViewContainer {
+        margin-top: 5px;
+      }
+    }
+
+    &.clicktwo-vertical {
+
+      .clicktwo-navContainer {
+       list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    // background-color: #333;
+        li {
+           float: left;
+
+
+          img {
+            width: 100%;
+            // width: 150px;
+          }
+        }
+      }
+
+      .clicktwo-tabViewContainer {
+        display: inline-block;
+        // max-width: 48%;
+        height: auto;
+        vertical-align: top;
+            margin-top: 5%;
+
+        .clicktwo-tabItem {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .clicktwo-tabViewContainer {
+    .clicktwo-tabItem {
+      width: auto;
+      display: none;
+      background-color: #7a7d7d;
+      padding: @item-padding;
+      color: @item-text-color;
+
+    }
+
+    .clicktwo-tabItem:after {
+      margin-left: @item-spacing;
+    }
+
+    .clicktwo-tabView-title {
+      display: block;
+      margin-top: 5px;
+      font-size: 20px;
+    }
+
+    .clicktwo-tabView-body {
+      display: block;
+      margin-top: 5px;
+      font-size: @font-size;
+    }
+  }
+
+  .clicktwo-popup {
+    height: 100%;
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 500;
+    background-color: @inverted-background-color;
+    color: @inverted-foreground-color;
+    border: @item-border;
+
+    .clicktwo-popup-inner {
+      padding: @item-padding;
+
+      .clicktwo-popup-toolbar-title {
+        width: 80%;
+        margin-bottom: 10px;
+        float: left;
+      }
+
+      .clicktwo-popup-body {
+        overflow-y: auto;
+      }
+
+      .clicktwo-popup-close {
+        display: inline-block;
+        float: right;
+        color: @primary-color;
+        .icon {
+          color: @inverted-foreground-color;
+        }
+      }
+    }
+  }
+
+}
+
+.no-touch {
+  .clicktwo-navContainer {
+    .clicktwo-indicator:hover {
+      cursor: pointer;
+      // background-color: @secondary-color;
+    }
+  }
+
+  .clicktwo-popup-close {
+    .icon:hover {
+      color: lighten(@inverted-background-color, 30%);
+    }
+  }
+}
+
+@media (max-width: 774px) {
+
+  .clicktwo-component {
+    .clicktwo-widget {
+      &.clicktwo-vertical {
+        .clicktwo-navContainer {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+}
