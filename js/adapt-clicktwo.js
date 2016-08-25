@@ -79,12 +79,10 @@
         // handler function for click event on indicator element.
         onClickDisplayItem: function(event) {
             if (event && event.preventDefault) event.preventDefault();
-            var $selectedElement = event.currentTarget;
+            var $selectedElement = $(event.currentTarget);
             var indicatorIndex = this.$('.clicktwo-indicator').index($selectedElement);
 
-            
-            console.log($(event.currentTarget));
-
+        
             this.setDeviceSize();
             var $tabViewContainer = this.$('.clicktwo-tabViewContainer');
             if (!this.model.get('_isDesktop')) {
@@ -154,5 +152,7 @@
 Adapt.register('clicktwo', clicktwo);
 
 return clicktwo;
+
+
 
 });
