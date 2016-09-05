@@ -97,9 +97,9 @@
             } else {
                 $selectedElement.addClass('clicktwo-indicatorActive');
             }
-            this.$('.clicktwo-tabViewContainer .clicktwo-tabItem').fadeOut('fast').promise().done(function(){
+            this.$('.clicktwo-tabViewContainer .clicktwo-tabItem').hide().promise().done(function(){
 
-                $('.clicktwo-tabViewContainer .clicktwo-tabItem:eq(' + indicatorIndex + ')').fadeIn('slow');
+                $('.clicktwo-tabViewContainer .clicktwo-tabItem:eq(' + indicatorIndex + ')').show();
 
             });
             

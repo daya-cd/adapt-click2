@@ -6,22 +6,24 @@
 
    {{#if invert}}
 
-   <div class="clicktwo-tabViewContainer" style="height: 300px;">
+   <div class="clicktwo-tabViewContainer" style="min-height: 375px; margin: 0; text-align: center;">
     {{#each _items}}
     <div class="clicktwo-tabItem">
-      <div class="clicktwo-tabView-title">{{{title}}}</div>
-      <div class="clicktwo-tabView-body">{{{body}}}</div>
+      <img src="{{_gif}}">
     </div>
     {{/each}}
   </div>
 
-
-  <ul  class="clicktwo-navContainer">
+  <ul  class="clicktwo-navContainer" style="margin-left: 26%;
+    margin-top: 20px;">
 {{#each _items}}
    
     <li class="clicktwo-indicator"><img src="{{_graphic.src}}" class="clicktwo-indicator-img" aria-label="{{_graphic.alt}}" ></li>
      {{/each}}
   </ul>
+   <div style="text-align: center;">
+<img src="{{imgreading}}" style="vertical-align: middle;"><span style="color:#fff;"><strong>{{subtitle}}</strong></span>
+</div>
 
 
 
