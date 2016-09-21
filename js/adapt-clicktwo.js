@@ -60,6 +60,7 @@
                 this.setReadyStatus();
             }, this));
             // $('.clicktwo-tabItem').addClass('animated bounceOutLeft');
+
         },
 
         // Used to check if the flipcard should reset on revisit
@@ -78,9 +79,16 @@
 
         // handler function for click event on indicator element.
         onClickDisplayItem: function(event) {
+
+             $('img.on').hide();
+                $('img.off').show();
             if (event && event.preventDefault) event.preventDefault();
             var $selectedElement = $(event.currentTarget);
             var indicatorIndex = this.$('.clicktwo-indicator').index($selectedElement);
+
+            var dataIndex=$selectedElement.data("id");
+            $(".defaultimage").hide();
+
 
         
             this.setDeviceSize();
@@ -91,6 +99,12 @@
                 $tabViewContainer.show();
             }
 
+
+            $selectedElement.children().eq(0).hide();
+            $selectedElement.children().eq(1).show();
+            
+            
+
             this.$('.clicktwo-navContainer .clicktwo-indicator').removeClass('clicktwo-indicatorActive');
             if ($selectedElement.hasClass('clicktwo-indicator-img')) {
                 $selectedElement.closest('.clicktwo-indicator').addClass('clicktwo-indicatorActive');
@@ -99,7 +113,9 @@
             }
             this.$('.clicktwo-tabViewContainer .clicktwo-tabItem').hide().promise().done(function(){
 
-                $('.clicktwo-tabViewContainer .clicktwo-tabItem:eq(' + indicatorIndex + ')').show();
+               
+                $(".clicktwo-tabViewContainer .show"+dataIndex+"").show();
+
 
             });
             

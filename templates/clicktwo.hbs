@@ -7,72 +7,95 @@
    {{#if invert}}
 
    <div class="clicktwo-tabViewContainer" style="min-height: 375px; margin: 0; text-align: center;">
+    <img src="{{{defaultimage}}}" class="defaultimage">
     {{#each _items}}
-    <div class="clicktwo-tabItem">
+    <div class="clicktwo-tabItem show{{index}}">
       <img src="{{_gif}}">
     </div>
     {{/each}}
   </div>
 
   <ul  class="clicktwo-navContainer" style="margin-left: 26%;
-    margin-top: 20px;">
-{{#each _items}}
-   
-    <li class="clicktwo-indicator"><img src="{{_graphic.src}}" class="clicktwo-indicator-img" aria-label="{{_graphic.alt}}" ></li>
-     {{/each}}
-  </ul>
-   <div style="text-align: center;">
-<img src="{{imgreading}}" style="vertical-align: middle;"><span style="color:#fff;"><strong>{{subtitle}}</strong></span>
+  margin-top: 20px;">
+
+
+  {{#if cycling}}
+  {{#each _items}}
+  <li class="clicktwo-indicator cycling" data-id="{{index}}">
+    <img src="{{_graphic.src}}" class="clicktwo-indicator-img off" aria-label="{{_graphic.alt}}" >
+    <img src="{{_graphic.srcActive}}" class="clicktwo-indicator-img on" aria-label="{{_graphic.alt}}" >
+
+
+  </li>
+  {{/each}}
+  {{else}}
+  {{#each _items}}
+  <li class="clicktwo-indicator" data-id="{{index}}">
+    <img src="{{_graphic.src}}" class="clicktwo-indicator-img " aria-label="{{_graphic.alt}}" >
+     
+
+  </li>
+  {{/each}}
+  {{/if}}
+  
+</ul>
+<div style="text-align: center;">
+  <img src="{{imgreading}}" style="vertical-align: middle;"><span style="color:#fff;"><strong>{{subtitle}}</strong></span>
 </div>
 
 
 
-  {{else}}
-  <ul class="clicktwo-navContainer">
-    {{#each _items}}
-    <li class="clicktwo-indicator">
-      <img src="{{_graphic.src}}" class="clicktwo-indicator-img" aria-label="{{_graphic.alt}}" tabindex="0">
-    </li>
-    {{/each}}
-  </ul>
+{{else}}
+<div id="clicktwobody">
+  <p>{{desc}}</p>
+  <p>{{desc_1}}</p>
+</div>
 
 
-  <div class="clicktwo-tabViewContainer">
+<div class="clicktwo-tabViewContainer" style="min-height: 375px;">
+  <img src="{{{defaultimage}}}" class="defaultimage">
+  {{#each _items}}
+  <div class="clicktwo-tabItem show{{index}}">
+    <img src="{{_gif}}">
+  </div>
+  {{/each}}
+</div>
+<ul class="clicktwo-navContainer" style="position: absolute;right: {{right}}%;margin-top: 17px;">
+  {{#each _items}}
+  <li class="clicktwo-indicator" data-id="{{index}}">
+    <img src="{{_graphic.src}}" class="clicktwo-indicator-img off" aria-label="{{_graphic.alt}}" tabindex="0">
+     <img src="{{_graphic.srcActive}}" class="clicktwo-indicator-img on" aria-label="{{_graphic.alt}}" >
+  </li>
+  {{/each}}
+</ul>
+{{/if}}
+
+
+
+<div class="clicktwo-popup display-none">
+  <div class="clicktwo-popup-inner">
+    <div class="clicktwo-popup-toolbar">
+      <div class="clicktwo-popup-toolbar-inner clearfix">
+        {{#each _items}}
+        <div class="clicktwo-popup-toolbar-title">
+          <h5 class="clicktwo-popup-toolbar-inner">
+            {{{title}}}
+          </h5>
+        </div>
+        {{/each}}
+        <a href="#" class="clicktwo-popup-close">
+          <div class="icon icon-cross"></div>
+        </a>
+      </div>
+    </div>
     {{#each _items}}
-    <div class="clicktwo-tabItem">
-      <div class="clicktwo-tabView-title">{{{title}}}</div>
-      <div class="clicktwo-tabView-body">{{{body}}}</div>
+    <div class="clicktwo-popup-body">
+      <div class="clicktwo-popup-body-inner">
+        {{{body}}}
+      </div>
     </div>
     {{/each}}
   </div>
-  {{/if}}
-
-
-
-  <div class="clicktwo-popup display-none">
-    <div class="clicktwo-popup-inner">
-      <div class="clicktwo-popup-toolbar">
-        <div class="clicktwo-popup-toolbar-inner clearfix">
-          {{#each _items}}
-          <div class="clicktwo-popup-toolbar-title">
-            <h5 class="clicktwo-popup-toolbar-inner">
-              {{{title}}}
-            </h5>
-          </div>
-          {{/each}}
-          <a href="#" class="clicktwo-popup-close">
-            <div class="icon icon-cross"></div>
-          </a>
-        </div>
-      </div>
-      {{#each _items}}
-      <div class="clicktwo-popup-body">
-        <div class="clicktwo-popup-body-inner">
-          {{{body}}}
-        </div>
-      </div>
-      {{/each}}
-    </div>
-  </div>
+</div>
 </div>
 </div>
